@@ -171,5 +171,4 @@ SELECT
 FROM yson_crashes_csv
 WHERE crash_date is not null and street_dir is not null
     and street_name is not null and latitude is not null
-
     and longitude is not null;
