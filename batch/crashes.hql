@@ -26,8 +26,8 @@ CREATE EXTERNAL TABLE yson_crashes_csv(
     prim_contributory_cause string,
     sec_contributory_cause string,
     street_num int,
-    street_dir string,
-    street_name string,
+    direction string,
+    street_suf string,
     beat_of_occurrence int,
     photos_taken string,
     statements_taken string,
@@ -47,8 +47,8 @@ CREATE EXTERNAL TABLE yson_crashes_csv(
     crash_hour int,
     crash_day_of_week int,
     crash_month int,
-    latitude int,
-    longitude int,
+    latitude decimal(10, 8),
+    longitude decimal(10, 8),
     location string
 )
     ROW FORMAT serde 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
@@ -67,7 +67,8 @@ CREATE EXTERNAL TABLE yson_crashes(
     crash_record_id string,
     cpd_report_num string,
     crash_date_est string,
-    crash_date timestamp,
+    crash_date date,
+    crash_datetime timestamp,
     posted_speed_limit int,
     traffic_ctrl_device string,
     device_cond string,
@@ -86,11 +87,13 @@ CREATE EXTERNAL TABLE yson_crashes(
     hit_and_run boolean,
     damage string,
     date_police_notified timestamp,
-    prim_contributory_cause string,
-    sec_contributory_cause string,
+    prim_cause string,
+    sec_cause string,
     street_num int,
-    street_dir string,
-    street_name string,
+    num_dir_str_suf string,
+    direction string,
+    --dir_street string,
+    dir_street_suf string,
     beat_of_occurrence int,
     photos_taken string,
     statements_taken string,
@@ -110,8 +113,8 @@ CREATE EXTERNAL TABLE yson_crashes(
     crash_hour int,
     crash_day_of_week int,
     crash_month int,
-    latitude int,
-    longitude int,
+    latitude decimal(10, 8),
+    longitude decimal(10, 8),
     location string
 )
     stored as orc;
@@ -122,6 +125,7 @@ SELECT
     crash_record_id,
     cpd_report_num,
     crash_date_est,
+    date(from_unixtime(unix_timestamp(crash_date,"MM/dd/yyyy hh:mm:ss a"))),
     from_unixtime(unix_timestamp(crash_date,"MM/dd/yyyy hh:mm:ss a")),
     posted_speed_limit,
     traffic_ctrl_device,
@@ -144,8 +148,10 @@ SELECT
     prim_contributory_cause,
     sec_contributory_cause,
     street_num,
-    street_dir,
-    street_name,
+    CONCAT(street_num, " ", direction, " ", street_suf),
+    direction,
+    --CONCAT(direction, " ", cast(split(street_suf, "[ ]")[0] as string)),
+    CONCAT(direction, " ", street_suf),
     beat_of_occurrence,
     photos_taken,
     statements_taken,
@@ -169,6 +175,18 @@ SELECT
     longitude,
     location
 FROM yson_crashes_csv
-WHERE crash_date is not null and street_dir is not null
-    and street_name is not null and latitude is not null
-    and longitude is not null;
+WHERE crash_date is not null and direction is not null
+    and street_suf is not null and latitude is not null
+    and longitude is not null limit 10;
+
+--DROP TABLE IF EXISTS yson_crashes_csv;
+
+select
+    street_num,
+    direction,
+    --dir_street,
+    dir_street_suf
+from yson_crashes limit 10;
+
+
+--select dir_street_suf, crash_date, crash_datetime from yson_crashes limit 30;
