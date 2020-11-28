@@ -73,7 +73,7 @@ app.get('/delays.html',function (req, res) {
 });
 
 app.get('/airline-ontime.html', function (req, res) {
-	hclient.table('yson_streets').scan({ maxVersions: 1}, (err,rows) => {
+	hclient.table('yson_carriers').scan({ maxVersions: 1}, (err,rows) => {
 		var template = filesystem.readFileSync("airline-ontime.mustache").toString();
 		var html = mustache.render(template, {
 			airlines : rows
@@ -112,7 +112,7 @@ app.get('/airline-ontime-delays.html',function (req, res) {
 				result.push(processYearRecord(yearRecord))
 				yearRecord = { year: year }
 			}
-			yearRecord[removePrefix(cell['column'],'stats:')] = Number(cell['$'])
+			yearRecord[removePrefix(cell['column'],'stats:')] = Number(cell['$'])  /* fog_ontime */
 		})
 		result.push(processYearRecord(yearRecord))
 		console.info(result)
