@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbase": "^0.6.1",
+    "hbase-rpc-client": "^0.1.15",
+    "mustache": "^4.0.1",
+    "node-thrift2-hbase": "^0.6.2",
+    "node-zookeeper-client": "^1.1.0"
+  }
+}

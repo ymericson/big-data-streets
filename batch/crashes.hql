@@ -177,7 +177,7 @@ SELECT
 FROM yson_crashes_csv
 WHERE crash_date is not null and direction is not null
     and street_suf is not null and latitude is not null
-    and longitude is not null limit 10;
+    and longitude is not null;
 
 --DROP TABLE IF EXISTS yson_crashes_csv;
 

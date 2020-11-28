@@ -16,6 +16,10 @@ import org.glassfish.jersey.jackson.JacksonFeature;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+
+
+
 public class TrafficUpdate {
 	static class Task extends TimerTask {
 		private Client client;
@@ -24,7 +28,6 @@ public class TrafficUpdate {
 			Invocation.Builder bldr
 					= client.target("https://data.cityofchicago.org/resource/n4j6-wkkf.json?street=Jefferson")
 					.request("application/json");
-
 			try {
 				return bldr.get(TrafficData.class);
 			} catch (Exception e) {
@@ -49,7 +52,6 @@ public class TrafficUpdate {
 			props.put("buffer.memory", 33554432);
 			props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 			props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
-
 			producer = new KafkaProducer<>(props);
 		}
 
@@ -61,10 +63,14 @@ public class TrafficUpdate {
 			ObjectMapper mapper = new ObjectMapper();
 
 			// Process API response
-			for (var key in response) {
+
+			for (int i = 0; i < TrafficData.length(); i++) {
+				JSONObject object = array.getJSONObject(i);
 				ProducerRecord<String, String> data;
 				try {
 					KafkaTrafficRecord ktr = new KafkaTrafficRecord(
+							key.getTimestamp(),
+							key.getSegmentId(),
 							key.getStreet(),
 							key.getFromst(),
 							key.getTost(),

@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+  <head>
+    <title>Result</title>
+    <link type="text/css" rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <div style="margin-left:275px;margin-right:auto;display:inline-block;box-shadow: 10px 10px 5px #888888;border:1px solid #000000;-moz-border-radius-bottomleft:9px;-webkit-border-bottom-left-radius:9px;border-bottom-left-radius:9px;-moz-border-radius-bottomright:9px;-webkit-border-bottom-right-radius:9px;border-bottom-right-radius:9px;-moz-border-radius-topright:9px;-webkit-border-top-right-radius:9px;border-top-right-radius:9px;-moz-border-radius-topleft:9px;-webkit-border-top-left-radius:9px;border-top-left-radius:9px;background:white">
+      &nbsp;Flight Delays from {{origin}} to {{dest}} by weather&nbsp;</div>
+    <p style="bottom-margin:10px">
+      <table class="CSS_Table_Example" style="width:60%;margin:auto;">
+	<tr><td>Clear</td><td>Fog</td><td>Rain</td><td>Snow</td><td>Hail</td><td>Thunder</td><td>Tornado</td></tr>
+	<tr><td>{{clear_dly}}</td><td>{{rain_dly}}</td><td>{{rain_dly}}</td><td>{{snow_dly}}</td>
+	  <td>{{hail_dly}}</td><td>{{thunder_dly}}</td><td>{{tornado_dly}}</td></tr>
+	
+    </table>
+    </p>
+</body></html>
