@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+  <head>
+    <title>Result</title>
+    <link type="text/css" rel="stylesheet" href="table.css" />
+  </head>
+  <body>
+    <div style="text-align: center;
+                margin-left:275px;
+                margin-right:auto;
+                display:inline-block;
+                border:1px solid #000000;
+                background:white">
+      &nbsp;Traffic Information for {{street}} in MPH&nbsp;</div>
+    <p style="bottom-margin:10px">
+      <table class="CSS_Table_Example" style="width:100%;margin:auto;">
+	<tr><th>Direction</th><td>From Street</td><td>To Street</td><td>Speed Month</td><td>Speed Week</td>
+        <td>Speed Day</td><td>Speed Hour</td></tr>
+        {{#StreetInfo}}
+	<tr><td><b>{{traffic_direction}}</b></td><td>{{from_street}}</td><td>{{to_street}}</td><td>{{speed_month}}</td>
+        <td>{{speed_week}}</td><td>{{speed_day}}</td><td>{{speed_hour}}</td></tr>
+        {{/StreetInfo}}
+    </table>
+    </p>
+</body></html>
