@@ -1,25 +1,45 @@
 <!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
 <html>
   <head>
-    <title>Result</title>
-    <link type="text/css" rel="stylesheet" href="table.css" />
+    <title>test</title>
+    <link type="text/css" rel="stylesheet" href="elegant-aero.css" />
+      <style>
+          input::-webkit-calendar-picker-indicator {
+              display: none;/* remove default arrow */
+          }
+          .myarrow:after {
+              content: url(https://i.stack.imgur.com/i9WFO.png);
+              margin-left: -20px;
+              padding: .1em;
+              pointer-events:none;
+          }
+      </style>
+      <script>
+          <!-- https://stackoverflow.com/questions/9975810/make-iframe-automatically-adjust-height-according-to-the-contents-without-using -->
+          function resizeIframe(obj) {
+              obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+          }
+      </script>
   </head>
-  <body>
-    <div style="text-align: center;
-                margin-left:275px;
-                margin-right:auto;
-                display:inline-block;
-                border:1px solid #000000;
-                background:white">
-      &nbsp;Traffic Information for {{street}} in MPH&nbsp;</div>
-    <p style="bottom-margin:10px">
-      <table class="CSS_Table_Example" style="width:100%;margin:auto;">
-	<tr><th>Direction</th><td>From Street</td><td>To Street</td><td>Speed Month</td><td>Speed Week</td>
-        <td>Speed Day</td><td>Speed Hour</td></tr>
-        {{#StreetInfo}}
-	<tr><td><b>{{traffic_direction}}</b></td><td>{{from_street}}</td><td>{{to_street}}</td><td>{{speed_month}}</td>
-        <td>{{speed_week}}</td><td>{{speed_day}}</td><td>{{speed_hour}}</td></tr>
-        {{/StreetInfo}}
-    </table>
-    </p>
-</body></html>
+  <body style='background-image:URL("traffic5.jpg");background-position:center bottom;background-size: 100%;'>
+    <p>
+    <form action="/street-results.html" style="width:500px;height:50px;margin:0 auto;padding-top=200px;background:#FFFFFF" method="get" target="results_iframe" class="elegant-aero">
+      <div style="white-space: nowrap"><label>
+	<span class="myarrow">
+        <span>Street:</span>
+	<input list="streets" name="street"/>
+          <datalist id="streets">
+              {{#streets}}
+                  <option value="{{key}}">
+              {{/streets}}
+          </datalist></span>
+      </label>
+
+	 <label><input style="padding:10px" type="submit" value="Submit"></label>
+      </div>
+    </form>
+    <p/>
+
+    <iframe frameBorder="0" onload="resizeIframe(this)" name="results_iframe" style="display:block;width:70%;margin-left:auto;margin-right:auto"/>
+  </body>
+</html>

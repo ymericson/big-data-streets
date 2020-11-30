@@ -1,9 +1,7 @@
 'use strict';
-// node.js packages needed for this application
 const http = require('http');
 var assert = require('assert');
 const express= require('express');
-// create Express object used to represent web app
 const app = express();
 const mustache = require('mustache');
 const filesystem = require('fs');
@@ -13,7 +11,6 @@ const port = Number(process.argv[2]);
 const hbase = require('hbase')
 // host:'localhost', port:8070
 var hclient = hbase({ host: process.argv[3], port: Number(process.argv[4])})
-
 
 // function rowToMap(row) {
 // 	var stats = {}
@@ -39,11 +36,10 @@ var hclient = hbase({ host: process.argv[3], port: Number(process.argv[4])})
 // 	  console.info(value)
 // 	})
 
-
 app.use(express.static('public'));
 app.get('/traffic.html', function (req, res) {
 	hclient.table('yson_streets').scan({ maxVersions: 1}, (err,rows) => {
-		var template = filesystem.readFileSync("street-results.mustache").toString();
+		var template = filesystem.readFileSync("submit.mustache").toString();
 		var html = mustache.render(template, {
 			streets : rows
 		});
@@ -55,18 +51,19 @@ function removePrefix(text, prefix) {
 	return text.substr(prefix.length)
 }
 
-app.get('/street-traffic.html',function (req, res) {
+app.get('/street-results.html',function (req, res) {
 	const street = req.query['street'];
-	console.log(street); // print street name
+	// console.log(street); // print street name
+
 	function processSegmentIdRecord(segmentIdRecord) {
 		var result = { segment_id : segmentIdRecord['segment_id']};
 		["from_street", "to_street", "traffic_direction",
-			"speed_month", "speed_week", "speed_day", "speed_hour"].forEach(val => {
+			"speed_month", "speed_week", "speed_day", "speed_hour", "speed_now"].forEach(val => {
 			result[val] = segmentIdRecord[val];
 		})
 		return result;
 	}
-	function StreetInfo(cells) {
+	function SpeedInfo(cells) {
 		var result = [];
 		var segmentIdRecord;
 		cells.forEach(function(cell) {
@@ -80,24 +77,66 @@ app.get('/street-traffic.html',function (req, res) {
 			segmentIdRecord[removePrefix(cell['column'],'stats:')] = cell['$']
 		})
 		result.push(processSegmentIdRecord(segmentIdRecord))
-		// console.log(result) // print street info
 		return result;
 	}
-
 	hclient.table('yson_street_by_seg').scan({
-			filter: {type : "PrefixFilter",
-				value: street},
+			filter: {type : "PrefixFilter", value: street},
 			maxVersions: 1},
 		(err, cells) => {
-			var si = StreetInfo(cells);
-			console.log(si)
-			var template = filesystem.readFileSync("submit.mustache").toString();
+			var si = SpeedInfo(cells);
+			// console.log(si)
+			var template = filesystem.readFileSync("result-table.mustache").toString();
 			var html = mustache.render(template, {
-				StreetInfo : si,
+				SpeedInfo : si,
+				street : street
+			});
+			// res.send(html)
+		})
+	// console.log(si)
+
+
+
+	function processRedlightSpeedRecord(streetRecord) {
+		var result = { street : streetRecord['street_name']};
+		["redlight_year", "redlight_months", "speed_year", "speed_months"].forEach(val => {
+			result[val] = streetRecord[val];
+		})
+		return result;
+	}
+	function RedlightSpeedInfo(cells) {
+		var result = [];
+		var streetRecord;
+		// console.log(streetRecord)
+		cells.forEach(function(cell) {
+			var street_name = cell['key']
+
+			if(streetRecord === undefined)  {
+				streetRecord = { street_name: street_name }
+				// console.log(streetRecord)
+			} else if (streetRecord['street_name'] != street_name ) {
+				result.push(processRedlightSpeedRecord(streetRecord))
+				streetRecord = {street_name: street_name}
+			}
+			streetRecord[removePrefix(cell['column'],'stats:')] = cell['$']
+		})
+		result.push(processRedlightSpeedRecord(streetRecord))
+		return result;
+	}
+	hclient.table('yson_redlight_speed').scan({
+			filter: {type : "PrefixFilter", value: street},
+			maxVersions: 1},
+		(err, cells) => {
+			if (cells.length > 0) {
+				var rsi = RedlightSpeedInfo(cells);
+			} else {
+				var rsi = undefined;
+			}
+			var template = filesystem.readFileSync("result-table.mustache").toString();
+			var html = mustache.render(template, {
+				RedlightSpeedInfo : rsi,
 				street : street
 			});
 			res.send(html)
-
 		})
 });
 
