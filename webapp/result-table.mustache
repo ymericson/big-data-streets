@@ -5,15 +5,8 @@
     <link type="text/css" rel="stylesheet" href="table.css" />
   </head>
   <body>
-    <div style="text-align: center;
-                margin-left:275px;
-                margin-right:auto;
-                display:inline-block;
-                border:1px solid #000000;
-                background:white">
-      &nbsp;Traffic Information for {{street}} in MPH&nbsp;</div>
+    <div>&nbsp;Traffic Information for {{street}} in MPH&nbsp;</div>
     <p style="bottom-margin:100px">
-
       <table class="CSS_Table_Example" style="width:100%;margin:auto;">
         <tr><td>Direction</td><td>From Street</td><td>To Street</td><td>Month</td><td>Week</td>
             <td>Day</td><td>Hour</td><td>Current</td></tr>
@@ -25,7 +18,10 @@
     </table>
 
     <table class="CSS_Table_Example" style="width:100%;margin:auto;">
-        <tr><td>Redlight Year</td><td>Redlight Months</td><td>Speed Year</td><td>Speed Months</td></tr>
+        <tr><td>Redlight Camera <br/>Violations: 1 Year</td>
+            <td>Redlight Camera <br/>Violations: 3 Months</td>
+            <td>Speed Camera <br/>Violations: 1 Year</td>
+            <td>Speed Camera <br/>Violations: 3 Months</td></tr>
         {{#RedlightSpeedInfo}}
             <tr><td><b>{{redlight_year}}</b></td><td>{{redlight_months}}</td><td>{{speed_year}}</td>
                 <td>{{speed_months}}</td>></tr>

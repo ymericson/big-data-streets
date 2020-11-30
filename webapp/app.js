@@ -54,7 +54,6 @@ function removePrefix(text, prefix) {
 app.get('/street-results.html',function (req, res) {
 	const street = req.query['street'];
 	// console.log(street); // print street name
-
 	function processSegmentIdRecord(segmentIdRecord) {
 		var result = { segment_id : segmentIdRecord['segment_id']};
 		["from_street", "to_street", "traffic_direction",
@@ -79,23 +78,6 @@ app.get('/street-results.html',function (req, res) {
 		result.push(processSegmentIdRecord(segmentIdRecord))
 		return result;
 	}
-	hclient.table('yson_street_by_seg').scan({
-			filter: {type : "PrefixFilter", value: street},
-			maxVersions: 1},
-		(err, cells) => {
-			var si = SpeedInfo(cells);
-			// console.log(si)
-			var template = filesystem.readFileSync("result-table.mustache").toString();
-			var html = mustache.render(template, {
-				SpeedInfo : si,
-				street : street
-			});
-			// res.send(html)
-		})
-	// console.log(si)
-
-
-
 	function processRedlightSpeedRecord(streetRecord) {
 		var result = { street : streetRecord['street_name']};
 		["redlight_year", "redlight_months", "speed_year", "speed_months"].forEach(val => {
@@ -122,22 +104,31 @@ app.get('/street-results.html',function (req, res) {
 		result.push(processRedlightSpeedRecord(streetRecord))
 		return result;
 	}
-	hclient.table('yson_redlight_speed').scan({
+
+	hclient.table('yson_street_by_seg').scan({
 			filter: {type : "PrefixFilter", value: street},
-			maxVersions: 1},
+			maxVersions: 12},
 		(err, cells) => {
-			if (cells.length > 0) {
-				var rsi = RedlightSpeedInfo(cells);
-			} else {
-				var rsi = undefined;
-			}
-			var template = filesystem.readFileSync("result-table.mustache").toString();
-			var html = mustache.render(template, {
-				RedlightSpeedInfo : rsi,
-				street : street
-			});
-			res.send(html)
+			var si = SpeedInfo(cells);
+			hclient.table('yson_redlight_speed').scan({
+					filter: {type : "PrefixFilter", value: street},
+					maxVersions: 12},
+				(err, cells) => {
+					if (cells.length > 0) {
+						var rsi = RedlightSpeedInfo(cells);
+					} else {
+						var rsi = undefined;
+					}
+					var template = filesystem.readFileSync("result-table.mustache").toString();
+					var html = mustache.render(template, {
+						SpeedInfo : si,
+						street : street,
+						RedlightSpeedInfo : rsi
+					});
+					res.send(html)
+			})
 		})
+
 });
 
 app.listen(port);

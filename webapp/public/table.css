@@ -71,3 +71,11 @@
 }.CSS_Table_Example tr:last-child td:last-child{
 	border-width:0px 0px 0px 0px;
 }
+div {
+	text-align: center;
+	margin-left:275px;
+	margin-right:auto;
+	display:inline-block;
+	border:1px solid #000000;
+	background:white;
+}
