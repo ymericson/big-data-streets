@@ -38,7 +38,7 @@
 	-webkit-border-bottom-left-radius:9px;
 	border-bottom-left-radius:9px;
 }.CSS_Table_Example tr:hover td{
-	background-color: #e7e7e7;
+	background-color: #f5f5f5;
 
 }.CSS_Table_Example tr:first-child td{
 	background-color:#0069d3;
@@ -79,3 +79,4 @@ div {
 	border:1px solid #000000;
 	background:white;
 }
+

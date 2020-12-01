@@ -104,10 +104,35 @@ app.get('/street-results.html',function (req, res) {
 		result.push(processRedlightSpeedRecord(streetRecord))
 		return result;
 	}
+	function processCrashRecord(crashIdRecord) {
+		var result = { crash_record_id : crashIdRecord['crash_record_id']};
+		["crash_date", "street", "address", "first_crash_type", "crash_type", "prim_cause", "damage"].forEach(val => {
+			result[val] = crashIdRecord[val];
+		})
+		return result;
+	}
+	function CrashInfo(cells) {
+		var result = [];
+		var crashIdRecord
+		cells.forEach(function(cell) {
+			var crash_record_id = removePrefix(cell['key'], street)
+			// console.log(crash_record_id)
+			if(crashIdRecord === undefined)  {
+				crashIdRecord = { crash_record_id: crash_record_id }
+			} else if (crashIdRecord['crash_record_id'] != crash_record_id) {
+				result.push(processCrashRecord(crashIdRecord))
+				crashIdRecord = { crash_record_id: crash_record_id }
+			}
+			crashIdRecord[removePrefix(cell['column'],'stats:')] = cell['$']
+		})
+		result.push(processCrashRecord(crashIdRecord))
+		return result;
+	}
+
 
 	hclient.table('yson_street_by_seg').scan({
 			filter: {type : "PrefixFilter", value: street},
-			maxVersions: 12},
+			maxVersions: 1},
 		(err, cells) => {
 			var si = SpeedInfo(cells);
 			hclient.table('yson_redlight_speed').scan({
@@ -119,16 +144,22 @@ app.get('/street-results.html',function (req, res) {
 					} else {
 						var rsi = undefined;
 					}
-					var template = filesystem.readFileSync("result-table.mustache").toString();
-					var html = mustache.render(template, {
-						SpeedInfo : si,
-						street : street,
-						RedlightSpeedInfo : rsi
-					});
-					res.send(html)
-			})
+					hclient.table('yson_crashes_month').scan({
+							filter: {type : "PrefixFilter", value: street},
+							maxVersions: 1},
+						(err, cells) => {
+							var ci = CrashInfo(cells);
+							var template = filesystem.readFileSync("result-table.mustache").toString();
+							var html = mustache.render(template, {
+								SpeedInfo: si,
+								street: street,
+								RedlightSpeedInfo: rsi,
+								CrashInfo: ci
+							});
+							res.send(html)
+						})
+				})
 		})
-
 });
 
 app.listen(port);

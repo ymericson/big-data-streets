@@ -16,7 +16,7 @@
             <td>{{speed_hour}}</td><td>{{speed_now}}</td></tr>
             {{/SpeedInfo}}
     </table>
-
+    <br>
     <table class="CSS_Table_Example" style="width:100%;margin:auto;">
         <tr><td>Redlight Camera <br/>Violations: 1 Year</td>
             <td>Redlight Camera <br/>Violations: 3 Months</td>
@@ -24,8 +24,16 @@
             <td>Speed Camera <br/>Violations: 3 Months</td></tr>
         {{#RedlightSpeedInfo}}
             <tr><td><b>{{redlight_year}}</b></td><td>{{redlight_months}}</td><td>{{speed_year}}</td>
-                <td>{{speed_months}}</td>></tr>
+                <td>{{speed_months}}</td></tr>
         {{/RedlightSpeedInfo}}
+    </table>
+    <br>
+    <table class="CSS_Table_Example" style="width:100%;margin:auto;">
+        <tr><td>Crash Date</td><td>Address</td><td>First Crash Type</td><td>Primary Cause</td><td>Damage</td></tr>
+        {{#CrashInfo}}
+            <tr><td><b>{{crash_date}}</b></td><td>{{address}}</td><td>{{first_crash_type}}</td>
+                <td>{{prim_cause}}</td><td>{{damage}}</td></tr>
+        {{/CrashInfo}}
     </table>
     </p>
 </body></html>

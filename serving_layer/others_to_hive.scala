@@ -1,10 +1,13 @@
 // Launch the spark shell with all jars needed by your tables. E.g.,
 spark-shell --master local[*]
 import org.apache.spark.sql.SaveMode
+import org.apache.spark.sql.functions._
 
 // Opening hive tables as spark dataframes
 val yson_redlight_cam = spark.table("yson_redlight_cam")
 val yson_speed_cam = spark.table("yson_speed_cam")
+val yson_crashes = spark.table("yson_crashes")
+val yson_traffic_hist = spark.table("yson_traffic_hist")
 
 ////////////////////////////////////////////////////////////
 // redlight camera and speed camera aggregation
@@ -81,11 +84,12 @@ speed_year_months.createOrReplaceTempView("speed_year_months")
 
 // join redlight camera and speed camera violations
 val redlight_speed = redlight_year_months.
-    join(speed_year_months, levenshtein(redlight_year_months("street"), speed_year_months("dir_street_suf")) < 1, "outer").
+    join(speed_year_months, levenshtein(redlight_year_months("street"), speed_year_months("dir_street_suf")) < 1, "left").
     withColumn("name_", coalesce(redlight_year_months("street"), speed_year_months("dir_street_suf"))).
     drop("name").
     withColumnRenamed("name_", "name").
-    select("name", "redlight_year", "redlight_months", "speed_year", "speed_months")
+    select("name", "redlight_year", "redlight_months", "speed_year", "speed_months").
+    withColumn("name", initcap(col("name")))
 redlight_speed.createOrReplaceTempView("redlight_speed")
 redlight_speed.write.mode(SaveMode.Overwrite).saveAsTable("yson_redlight_speed")
 
@@ -96,47 +100,55 @@ redlight_speed.write.mode(SaveMode.Overwrite).saveAsTable("yson_redlight_speed")
 // crashes
 ///////////////////////////////////////////////////////////
 val crashes = spark.sql(
-  """SELECT crash_date, replace(replace(replace(replace(dir_street_suf,' BLVD',''),
+  """SELECT crash_record_id, crash_date, street_num, replace(replace(replace(replace(dir_street_suf,' BLVD',''),
       ' ST',''),' AVE',''),' RD','') dir_street_suf, first_crash_type, crash_type, prim_cause, damage
      FROM yson_crashes
      """)
 crashes.createOrReplaceTempView("crashes")
 
-val crashes_month = crashes.
-  select($"crash_date", $"dir_street_suf", $"first_crash_type", $"crash_type", $"prim_cause", $"damage").
-  filter($"crash_date" > add_months(current_date,-1))
-crashes_month.createOrReplaceTempView("crashes_within_year")
+val crashes2 = crashes.
+  select($"crash_record_id", $"crash_date", $"dir_street_suf", $"street_num",
+    $"first_crash_type", $"crash_type", $"prim_cause", $"damage").
+  filter($"crash_date" > add_months(current_date,-1)).
+  withColumn("dir_street_suf", initcap(col("dir_street_suf")))
+crashes2.createOrReplaceTempView("crashes2")
+
+//val crashes_month = crashes2.
+//  join(yson_traffic_hist, yson_traffic_hist("dir_street") <=> crashes2("dir_street_suf"), "right").
+//  select($"crash_date", $"dir_street_suf", $"first_crash_type", $"crash_type", $"prim_cause", $"damage")
+//crashes_month.createOrReplaceTempView("crashes_month")
+//
+
+val crashes_month = spark.sql(
+  """SELECT * from crashes2 where dir_street_suf in (SELECT DISTINCT dir_street from yson_traffic_hist)"""
+)
+crashes_month.createOrReplaceTempView("crashes_month")
 crashes_month.write.mode(SaveMode.Overwrite).saveAsTable("yson_crashes_month")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//
+//val crashes_top1000 = spark.sql(
+//  """SELECT * from crashes_month limit 1000;
+//     """)
+//crashes_top1000.createOrReplaceTempView("crashes_top1000")
+//crashes_top1000.write.mode(SaveMode.Overwrite).saveAsTable("yson_crashes_top1000")
+//
+//
+//
+//
+//val crashes_month_recent = spark.sql(
+//  """
+//  WITH cte AS (
+//  SELECT *, ROW_NUMBER() OVER (PARTITION BY dir_street_suf ORDER BY crash_date DESC) rn
+//    FROM crashes_month
+//  )
+//  SELECT crash_date, dir_street_suf, first_crash_type, crash_type, prim_cause, damage
+//  FROM cte
+//    WHERE rn <= 3
+//    """)
+//crashes_month_recent.createOrReplaceTempView("crashes_month_recent")
+//
+//
+//
+//crashes_month_recent.write.mode(SaveMode.Overwrite).saveAsTable("yson_crashes_month_recent")
+//
