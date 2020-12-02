@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9654a739-d41f-406d-890f-523522718641" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../SLWA/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/scala_compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.settings/org.eclipse.m2e.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/.settings/org.scala-ide.sdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/SLWA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/src/main/scala/StreamWeather.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SLWA/src/main/scala/WeatherReport.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demoSLFA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../serving_layer/traffic_to_hbase.hql" beforeDir="false" afterPath="$PROJECT_DIR$/../../serving_layer/traffic_to_hbase.hql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/FleetArrivals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/FleetArrivedResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/FlightInfoExResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/KafkaFlightRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/KafkaTrafficRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/KafkaTrafficRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/TrafficData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/TrafficUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/TrafficUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse$FleetArrivedResult$Arrival.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse$FleetArrivedResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse$FlightInfoExResult$Flight.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse$FlightInfoExResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/KafkaFlightRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/TrafficData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/KafkaTrafficRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/KafkaTrafficRecord.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/StreamTraffic.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/StreamTraffic.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/TrafficRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/TrafficRecord.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/analysis/compile" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/analysis/compile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/trafficSpeedLayer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/trafficSpeedLayer-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webapp/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webapp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webapp/submit.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/submit.mustache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1l2WTgO6DRPmiTayVg8D6al4FAF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9654a739-d41f-406d-890f-523522718641" name="Default Changelist" comment="" />
+      <created>1606795676071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606795676071</updated>
+      <workItem from="1606795677554" duration="11495000" />
+      <workItem from="1606887366735" duration="12000" />
+      <workItem from="1606887541437" duration="59000" />
+      <workItem from="1606889429652" duration="1701000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1037" height="558" key="GridCell.Tab.0.bottom" timestamp="1606853128915">
+      <screen x="0" y="0" width="1080" height="1880" />
+    </state>
+    <state width="1037" height="558" key="GridCell.Tab.0.bottom/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606853128915" />
+    <state width="1037" height="558" key="GridCell.Tab.0.center" timestamp="1606853128915">
+      <screen x="0" y="0" width="1080" height="1880" />
+    </state>
+    <state width="1037" height="558" key="GridCell.Tab.0.center/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606853128915" />
+    <state width="1037" height="558" key="GridCell.Tab.0.left" timestamp="1606853128915">
+      <screen x="0" y="0" width="1080" height="1880" />
+    </state>
+    <state width="1037" height="558" key="GridCell.Tab.0.left/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606853128915" />
+    <state width="1037" height="558" key="GridCell.Tab.0.right" timestamp="1606853128915">
+      <screen x="0" y="0" width="1080" height="1880" />
+    </state>
+    <state width="1037" height="558" key="GridCell.Tab.0.right/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606853128915" />
+    <state x="41" y="584" key="SettingsEditor" timestamp="1606804715204">
+      <screen x="0" y="0" width="1080" height="1880" />
+    </state>
+    <state x="41" y="584" key="SettingsEditor/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606804715204" />
+  </component>
+</project>

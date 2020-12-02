@@ -1,21 +1,12 @@
 package yson.trafficKafka;
 
 public class KafkaTrafficRecord {
-	public KafkaTrafficRecord(String timestamp, String segmentId, String streetName,
-							  String fromStreet, String toStreet, int trafficSpeed) {
+	public KafkaTrafficRecord(String segmentId, String StrHeading, String street, int speed) {
 		super();
-		this.timestamp = timestamp;
 		this.segmentId = segmentId;
-		this.streetName = streetName;
-		this.fromStreet = fromStreet;
-		this.toStreet = toStreet;
-		this.trafficSpeed = trafficSpeed;
-	}
-	public String getTimestamp() {
-		return timestamp;
-	}
-	public void setTimestamp(String timestamp) {
-		this.timestamp = timestamp;
+		this.StrHeading = StrHeading;
+		this.street = street;
+		this.speed = speed;
 	}
 	public String getSegmentId() {
 		return segmentId;
@@ -23,34 +14,26 @@ public class KafkaTrafficRecord {
 	public void setSegmentId(String segmentId) {
 		this.segmentId = segmentId;
 	}
-	public String getStreetName() {
-		return streetName;
+	public String getStrHeading() {
+		return StrHeading;
 	}
-	public void setStreetName(String streetName) {
-		this.streetName = streetName;
+	public void setStrHeading(String StrHeading) {
+		this.StrHeading = StrHeading;
 	}
-	public String getFromStreet() {
-		return fromStreet;
+	public String getStreet() {
+		return street;
 	}
-	public void setFromStreet(String fromStreet) {
-		this.fromStreet = fromStreet;
+	public void setStreet(String street) {
+		this.street = street;
 	}
-	public String getToStreet() {
-		return toStreet;
+	public int getSpeed() {
+		return speed;
 	}
-	public void setToStreet(String toStreet) {
-		this.toStreet = toStreet;
+	public void setSpeed(int speed) {
+		this.speed = speed;
 	}
-	public int getTrafficSpeed() {
-		return trafficSpeed;
-	}
-	public void setTrafficSpeed(int trafficSpeed) {
-		this.trafficSpeed = trafficSpeed;
-	}
-	String timestamp;
 	String segmentId;
-	String streetName;
-	String fromStreet;
-	String toStreet;
-	int trafficSpeed;
+	String StrHeading;
+	String street;
+	int speed;
 }

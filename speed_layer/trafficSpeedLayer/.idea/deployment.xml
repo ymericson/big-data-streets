@@ -2,10 +2,10 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="cluster2">
+      <paths name="Single Webserver">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="yson/trafficSpeedLayer" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -17,19 +17,15 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-
-
-
 public class TrafficUpdate {
 	static class Task extends TimerTask {
 		private Client client;
-
-		public TrafficData getTrafficData() {
+		public TrafficResponse[] getTrafficResponse() {
 			Invocation.Builder bldr
-					= client.target("https://data.cityofchicago.org/resource/n4j6-wkkf.json?street=Jefferson")
+					= client.target("https://data.cityofchicago.org/resource/n4j6-wkkf.json?$limit=10000")
 					.request("application/json");
 			try {
-				return bldr.get(TrafficData.class);
+				return bldr.get(TrafficResponse[].class);
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
 			}
@@ -40,10 +36,10 @@ public class TrafficUpdate {
 		Properties props = new Properties();
 		String TOPIC = "yson_traffic";
 		KafkaProducer<String, String> producer;
-		
+
 		public Task() {
 			client = ClientBuilder.newClient();
-			client.register(JacksonFeature.class); 
+			client.register(JacksonFeature.class);
 			props.put("bootstrap.servers", bootstrapServers);
 			props.put("acks", "all");
 			props.put("retries", 0);
@@ -57,24 +53,19 @@ public class TrafficUpdate {
 
 		@Override
 		public void run() {
-			TrafficData response = getTrafficData();
-			if(response == null || response.getSegmentid() == null)
+			TrafficResponse[] response = getTrafficResponse();
+			if(response == null)
 				return;
 			ObjectMapper mapper = new ObjectMapper();
-
 			// Process API response
-
-			for (int i = 0; i < TrafficData.length(); i++) {
-				JSONObject object = array.getJSONObject(i);
+			for (TrafficResponse tr : response) {
 				ProducerRecord<String, String> data;
 				try {
 					KafkaTrafficRecord ktr = new KafkaTrafficRecord(
-							key.getTimestamp(),
-							key.getSegmentId(),
-							key.getStreet(),
-							key.getFromst(),
-							key.getTost(),
-							Integer.parseInt(key.getTraffic());
+							tr.getSegmentid(),
+							tr.getStrheading(),
+							tr.getStreet(),
+							Integer.parseInt(tr.getTraffic()));
 					data = new ProducerRecord<String, String> (
 							TOPIC,
 							mapper.writeValueAsString(ktr));

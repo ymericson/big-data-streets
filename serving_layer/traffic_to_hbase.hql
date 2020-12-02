@@ -48,7 +48,27 @@ INSERT OVERWRITE TABLE yson_streets
 
 
 
+
+
+
+
 ------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 drop table if exists yson_traffic_times_hbase;
 create table yson_traffic_times_hbase (
