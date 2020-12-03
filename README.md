@@ -37,7 +37,7 @@ from the master dataset.
 
 It also uses a front-end web app to convert output to a graphical interface.
 
-![Lambda Architecture](.images/lambdajpg.jpg)
+![Lambda Architecture](.images/lambda.jpg)
 
 #### Batch Layer
 
