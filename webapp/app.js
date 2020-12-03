@@ -50,15 +50,33 @@ app.get('/traffic.html', function (req, res) {
 function removePrefix(text, prefix) {
 	return text.substr(prefix.length)
 }
-
+function byteToInt(x){
+	let val=0;
+	for (let i=0; i<x.length; ++i) {
+		val+=x[i];
+		if(i<x.length-1) val = val << 8;
+	}
+	return val;
+}
+function counterToNumber(c) {
+	return Number(Buffer.from(c).readInt32BE());
+}
 app.get('/street-results.html',function (req, res) {
 	const street = req.query['street'];
-	// console.log(street); // print street name
+	console.log(street); // print street name
 	function processSegmentIdRecord(segmentIdRecord) {
 		var result = { segment_id : segmentIdRecord['segment_id']};
 		["from_street", "to_street", "traffic_direction",
 			"speed_month", "speed_week", "speed_day", "speed_hour", "speed_now"].forEach(val => {
-			result[val] = segmentIdRecord[val];
+			if (val == "speed_now") {
+				if (counterToNumber(segmentIdRecord[val]) != 0) {
+					result[val] = counterToNumber(segmentIdRecord[val]);
+				} else {
+					result[val] = "-"
+				}
+			} else {
+				result[val] = segmentIdRecord[val];
+			}
 		})
 		return result;
 	}
@@ -81,7 +99,11 @@ app.get('/street-results.html',function (req, res) {
 	function processRedlightSpeedRecord(streetRecord) {
 		var result = { street : streetRecord['street_name']};
 		["redlight_year", "redlight_months", "speed_year", "speed_months"].forEach(val => {
-			result[val] = streetRecord[val];
+			if (streetRecord[val] === undefined) {
+				result[val] = "-"
+			} else {
+				result[val] = streetRecord[val];
+			}
 		})
 		return result;
 	}
@@ -135,6 +157,7 @@ app.get('/street-results.html',function (req, res) {
 			maxVersions: 1},
 		(err, cells) => {
 			var si = SpeedInfo(cells);
+			// console.log(si);
 			hclient.table('yson_redlight_speed').scan({
 					filter: {type : "PrefixFilter", value: street},
 					maxVersions: 12},
@@ -144,11 +167,18 @@ app.get('/street-results.html',function (req, res) {
 					} else {
 						var rsi = undefined;
 					}
+					console.log(rsi);
 					hclient.table('yson_crashes_month').scan({
 							filter: {type : "PrefixFilter", value: street},
 							maxVersions: 1},
 						(err, cells) => {
-							var ci = CrashInfo(cells);
+							if (cells.length > 0) {
+								var ci = CrashInfo(cells);
+							} else {
+								var ci = undefined;
+							}
+							// var ci = CrashInfo(cells);
+							// console.log(ci);
 							var template = filesystem.readFileSync("result-table.mustache").toString();
 							var html = mustache.render(template, {
 								SpeedInfo: si,

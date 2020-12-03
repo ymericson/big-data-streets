@@ -23,79 +23,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebdc6551-6505-4779-8221-9aaa39acb348" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../flight_and_weather_v2/.idea/flight_and_weather_v2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.settings/org.eclipse.m2e.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/.settings/org.scala-ide.sdt.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/demoSLFA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/src/main/scala/KafkaFlightRecord.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/src/main/scala/RouteStats.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/src/main/scala/StreamFlights.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/src/main/scala/WeatherReport.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/analysis/compile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/KafkaFlightRecord$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/KafkaFlightRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/RouteStats$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/RouteStats.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/StreamFlights$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/StreamFlights.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/WeatherReport$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/classes/WeatherReport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/demoSLFA/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/KafkaTrafficRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/TrafficUpdate$Task.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/TrafficUpdate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.images/interface.gif" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/original-uber-trafficKafka-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serving_layer/others_to_hive.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../serving_layer/others_to_hive.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../serving_layer/write_to_hbase.hql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/FleetArrivals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/FleetArrivedResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/FlightInfoExResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/KafkaFlightRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/KafkaTrafficRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/KafkaTrafficRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/TrafficData.java" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/TrafficResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../serving_layer/traffic_to_hbase.hql" beforeDir="false" afterPath="$PROJECT_DIR$/../serving_layer/traffic_to_hbase.hql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/TrafficUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/src/main/java/yson/trafficKafka/TrafficUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse$FleetArrivedResult$Arrival.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse$FleetArrivedResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse$FlightInfoExResult$Flight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse$FlightInfoExResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/KafkaFlightRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/TrafficData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/src/main/scala/KafkaTrafficRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/src/main/scala/KafkaTrafficRecord.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/TrafficUpdate$Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/classes/yson/trafficKafka/TrafficUpdate$Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/trafficKafka-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/trafficKafka-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/uber-trafficKafka-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficKafka/target/uber-trafficKafka-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/src/main/scala/StreamTraffic.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/src/main/scala/StreamTraffic.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/src/main/scala/TrafficRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/src/main/scala/TrafficRecord.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/analysis/compile" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/analysis/compile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/KafkaTrafficRecord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/KafkaTrafficRecord$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/KafkaTrafficRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/KafkaTrafficRecord.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/StreamTraffic$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/StreamTraffic$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/StreamTraffic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/StreamTraffic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/TrafficRecord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/TrafficRecord$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/TrafficRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/classes/TrafficRecord.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/trafficSpeedLayer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/trafficSpeedLayer-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../speed_layer/trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/table.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result-table.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/result-table.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/submit.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/submit.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +87,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="settings.editor.selected.configurable" value="ssh.settings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -149,17 +95,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.app.js">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="app-working.js" type="NodeJSConfigurationType" temporary="true" application-parameters="3000 localhost 8070" nameIsGenerated="true" path-to-js-file="app-working.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -191,7 +126,8 @@
       <workItem from="1606621385838" duration="1563000" />
       <workItem from="1606623258425" duration="3276000" />
       <workItem from="1606628479843" duration="847000" />
-      <workItem from="1606630503001" duration="34819000" />
+      <workItem from="1606630503001" duration="46253000" />
+      <workItem from="1606957550664" duration="5631000" />
     </task>
     <servers />
   </component>
@@ -218,38 +154,44 @@
       <screen x="0" y="0" width="1080" height="1880" />
     </state>
     <state x="0" y="595" key="#com.intellij.execution.impl.EditConfigurationsDialog/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606630753781" />
-    <state x="320" y="695" key="FileChooserDialogImpl" timestamp="1606628530343">
-      <screen x="0" y="0" width="1080" height="1880" />
+    <state x="1649" y="1028" key="FileChooserDialogImpl" timestamp="1606854471923">
+      <screen x="1080" y="644" width="1920" height="1040" />
     </state>
     <state x="320" y="695" key="FileChooserDialogImpl/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606628530343" />
-    <state width="1037" height="445" key="GridCell.Tab.0.bottom" timestamp="1606851925991">
-      <screen x="0" y="0" width="1080" height="1880" />
+    <state x="320" y="695" key="FileChooserDialogImpl/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606854036682" />
+    <state x="1649" y="1028" key="FileChooserDialogImpl/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606854471922" />
+    <state width="914" height="201" key="GridCell.Tab.0.bottom" timestamp="1607012380118">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1037" height="338" key="GridCell.Tab.0.bottom/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606690730300" />
-    <state width="1037" height="445" key="GridCell.Tab.0.bottom/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606851925991" />
-    <state width="1877" height="394" key="GridCell.Tab.0.bottom/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606788972236" />
+    <state width="1037" height="529" key="GridCell.Tab.0.bottom/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606946341569" />
+    <state width="914" height="445" key="GridCell.Tab.0.bottom/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606859277567" />
     <state width="839" height="338" key="GridCell.Tab.0.bottom/1920.226.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606706449381" />
-    <state width="1037" height="445" key="GridCell.Tab.0.center" timestamp="1606851925991">
-      <screen x="0" y="0" width="1080" height="1880" />
+    <state width="914" height="201" key="GridCell.Tab.0.bottom/1920.257.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607012380118" />
+    <state width="914" height="201" key="GridCell.Tab.0.center" timestamp="1607012380118">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1037" height="338" key="GridCell.Tab.0.center/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606690730300" />
-    <state width="1037" height="445" key="GridCell.Tab.0.center/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606851925991" />
-    <state width="1877" height="394" key="GridCell.Tab.0.center/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606788972236" />
+    <state width="1037" height="529" key="GridCell.Tab.0.center/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606946341569" />
+    <state width="914" height="445" key="GridCell.Tab.0.center/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606859277567" />
     <state width="839" height="338" key="GridCell.Tab.0.center/1920.226.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606706449380" />
-    <state width="1037" height="445" key="GridCell.Tab.0.left" timestamp="1606851925991">
-      <screen x="0" y="0" width="1080" height="1880" />
+    <state width="914" height="201" key="GridCell.Tab.0.center/1920.257.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607012380118" />
+    <state width="914" height="201" key="GridCell.Tab.0.left" timestamp="1607012380117">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1037" height="338" key="GridCell.Tab.0.left/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606690730299" />
-    <state width="1037" height="445" key="GridCell.Tab.0.left/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606851925991" />
-    <state width="1877" height="394" key="GridCell.Tab.0.left/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606788972236" />
+    <state width="1037" height="529" key="GridCell.Tab.0.left/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606946341569" />
+    <state width="914" height="445" key="GridCell.Tab.0.left/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606859277567" />
     <state width="839" height="338" key="GridCell.Tab.0.left/1920.226.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606706449380" />
-    <state width="1037" height="445" key="GridCell.Tab.0.right" timestamp="1606851925991">
-      <screen x="0" y="0" width="1080" height="1880" />
+    <state width="914" height="201" key="GridCell.Tab.0.left/1920.257.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607012380117" />
+    <state width="914" height="201" key="GridCell.Tab.0.right" timestamp="1607012380118">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1037" height="338" key="GridCell.Tab.0.right/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606690730300" />
-    <state width="1037" height="445" key="GridCell.Tab.0.right/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606851925991" />
-    <state width="1877" height="394" key="GridCell.Tab.0.right/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606788972236" />
+    <state width="1037" height="529" key="GridCell.Tab.0.right/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606946341569" />
+    <state width="914" height="445" key="GridCell.Tab.0.right/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606859277567" />
     <state width="839" height="338" key="GridCell.Tab.0.right/1920.226.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606706449381" />
+    <state width="914" height="201" key="GridCell.Tab.0.right/1920.257.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607012380118" />
     <state width="1037" height="683" key="GridCell.Tab.1.bottom" timestamp="1606763747521">
       <screen x="0" y="0" width="1080" height="1880" />
     </state>
@@ -310,6 +252,11 @@
     </state>
     <state width="1037" height="683" key="GridCell.Tab.3.right/1080.526.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606621366766" />
     <state width="1037" height="683" key="GridCell.Tab.3.right/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606763747522" />
+    <state x="1946" y="846" width="1031" height="712" key="SettingsEditor" timestamp="1606859091682">
+      <screen x="1080" y="644" width="1920" height="1040" />
+    </state>
+    <state x="41" y="584" key="SettingsEditor/1080.644.1920.1040/0.0.1080.1880@0.0.1080.1880" timestamp="1606854293818" />
+    <state x="1946" y="846" width="1031" height="712" key="SettingsEditor/1080.644.1920.1040/0.0.1080.1880@1080.644.1920.1040" timestamp="1606859091680" />
     <state x="245" y="493" width="590" height="894" key="find.popup" timestamp="1606623410788">
       <screen x="0" y="0" width="1080" height="1880" />
     </state>

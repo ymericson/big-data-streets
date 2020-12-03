@@ -2,11 +2,16 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="cluster2">
+      <paths name="Single Webserver">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="dev/yson/project" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/../../../msspertu/Demo/.idea" />
+            <excludedPath local="true" path="D:/Users/Msspertu/Demo/package-lock.json" />
+            <excludedPath local="true" path="$PROJECT_DIR$/../../../msspertu/Demo/node_modules" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
