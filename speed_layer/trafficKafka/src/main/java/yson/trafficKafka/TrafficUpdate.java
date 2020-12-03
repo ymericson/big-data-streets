@@ -34,7 +34,7 @@ public class TrafficUpdate {
 
 		// Send API updates to the "yson_traffic" topic
 		Properties props = new Properties();
-		String TOPIC = "yson_traffic";
+		String TOPIC = "yson_traffic_1";
 		KafkaProducer<String, String> producer;
 
 		public Task() {

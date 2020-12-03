@@ -64,9 +64,9 @@ object StreamTraffic {
     val Array(brokers) = args
 
     val sparkConf = new SparkConf().setAppName("StreamTraffic")
-    val ssc = new StreamingContext(sparkConf, Seconds(2))
+    val ssc = new StreamingContext(sparkConf, Seconds(60))
 
-    val topicsSet = Set("yson_traffic")
+    val topicsSet = Set("yson_traffic_1")
     val kafkaParams = Map[String, Object](
       "bootstrap.servers" -> brokers,
       "key.deserializer" -> classOf[StringDeserializer],
@@ -88,9 +88,8 @@ object StreamTraffic {
 //    processedTraffic.print()
     // write to an HBase table
     val batchStats = ktr.map(tr => {
-      print("  find key: " + tr.strHeading + " " + tr.street + tr.segmentId)
-      print("  speed: " + tr.speed)
-      if (tr.speed > 0) {
+      println(tr.strHeading + " " + tr.street + tr.segmentId + " : " + tr.speed)
+      if (tr.speed > 0) { // value of -1 means no estimate is available
         val put = new Put(Bytes.toBytes(tr.strHeading + " " + tr.street + tr.segmentId))
         put.addColumn(Bytes.toBytes("stats"), Bytes.toBytes("speed_now"), Bytes.toBytes(tr.speed))
         StreetBySeg.put(put)

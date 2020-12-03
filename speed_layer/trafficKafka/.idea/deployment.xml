@@ -2,7 +2,7 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="cluster2">
+      <paths name="Single Webserver">
         <serverdata>
           <mappings>
             <mapping deploy="yson/trafficKafka" local="$PROJECT_DIR$" web="/" />

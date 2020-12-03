@@ -23,60 +23,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe54b89a-f023-4ac2-9655-04edaffcb4d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.settings/org.scala-ide.sdt.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SLWA.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/StreamWeather.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/WeatherReport.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../demoSLFA/demoSLFA.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.images/lambdajpg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/1.getData.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/2.ingestToHive.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/crashes.hql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/redlight_cam.hql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/speed_cam.hql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/streets.hql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../batch_layer/traffic_hist.hql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/1.getData.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/2.ingestToHive.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/crashes.hql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/redlight_cam.hql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/speed_cam.hql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/streets.hql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../batch/traffic_hist.hql" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../serving_layer/traffic_to_hbase.hql" beforeDir="false" afterPath="$PROJECT_DIR$/../../serving_layer/traffic_to_hbase.hql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/FleetArrivals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/FleetArrivedResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/FlightInfoExResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/KafkaFlightRecord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/KafkaTrafficRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/KafkaTrafficRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/TrafficData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/TrafficUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/src/main/java/yson/trafficKafka/TrafficUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse$FleetArrivedResult$Arrival.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse$FleetArrivedResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FleetArrivedResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse$FlightInfoExResult$Flight.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse$FlightInfoExResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/FlightInfoExResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/KafkaFlightRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/classes/yson/trafficKafka/TrafficData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficKafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/KafkaTrafficRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/KafkaTrafficRecord.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoSLFA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../demoSLFA/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/StreamTraffic.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/StreamTraffic.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/TrafficRecord.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/src/main/scala/TrafficRecord.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/analysis/compile" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/analysis/compile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/KafkaTrafficRecord.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/StreamTraffic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord.class" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/classes/TrafficRecord.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/trafficSpeedLayer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/trafficSpeedLayer-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../webapp/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../webapp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webapp/public/table.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/public/table.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../webapp/result-table.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/result-table.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../webapp/submit.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/../../webapp/submit.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +104,8 @@
       <updated>1606865400431</updated>
       <workItem from="1606865403175" duration="3615000" />
       <workItem from="1606887472394" duration="122000" />
-      <workItem from="1606889409057" duration="1512000" />
+      <workItem from="1606889409057" duration="2330000" />
+      <workItem from="1606957527509" duration="701000" />
     </task>
     <servers />
   </component>
