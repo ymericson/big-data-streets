@@ -19,6 +19,8 @@ object StreamTraffic {
   hbaseConf.set("hbase.zookeeper.property.clientPort", "2181")
   hbaseConf.set("hbase.zookeeper.quorum", "localhost")
 
+
+
   val hbaseConnection = ConnectionFactory.createConnection(hbaseConf)
   val StreetBySeg = hbaseConnection.getTable(TableName.valueOf("yson_street_by_seg"))
 //  val LatestTraffic = hbaseConnection.getTable(TableName.valueOf("yson_latest_traffic"))
@@ -64,16 +66,17 @@ object StreamTraffic {
     val Array(brokers) = args
 
     val sparkConf = new SparkConf().setAppName("StreamTraffic")
-    val ssc = new StreamingContext(sparkConf, Seconds(60))
+    sparkConf.set("spark.streaming.kafka.maxRatePerPartition", "50000")
+    val ssc = new StreamingContext(sparkConf, Seconds(30))
 
-    val topicsSet = Set("yson_traffic_1")
+    val topicsSet = Set("yson_traffic_2")
     val kafkaParams = Map[String, Object](
       "bootstrap.servers" -> brokers,
       "key.deserializer" -> classOf[StringDeserializer],
       "value.deserializer" -> classOf[StringDeserializer],
       "group.id" -> "use_a_separate_group_id_for_each_stream",
       "auto.offset.reset" -> "latest",
-      "enable.auto.commit" -> (false: java.lang.Boolean)
+      "enable.auto.commit" -> (false: java.lang.Boolean),
     )
     val stream = KafkaUtils.createDirectStream[String, String](
       ssc, PreferConsistent,
@@ -84,8 +87,6 @@ object StreamTraffic {
     val serializedRecords = stream.map(_.value);
     val ktr = serializedRecords.map(rec => mapper.readValue(rec, classOf[KafkaTrafficRecord]))
 
-//    val processedTraffic = ktrs.map(incrementTrafficByStreet)
-//    processedTraffic.print()
     // write to an HBase table
     val batchStats = ktr.map(tr => {
       println(tr.strHeading + " " + tr.street + tr.segmentId + " : " + tr.speed)
