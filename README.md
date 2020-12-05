@@ -97,8 +97,12 @@ Demo:
     ```
     java -cp yson/trafficKafka/target/uber-trafficKafka-1.0-SNAPSHOT.jar yson.trafficKafka.TrafficUpdate b-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092,b-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092
     ```
+- We can look at the topic being written here:
 
-- Start the Spark Streaming job to consume the traffic streaming in from the API through Kafka:
+    ```
+    kafka_2.12-2.2.1/bin/kafka-console-consumer.sh --bootstrap-server b-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092,b-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092 --topic yson_traffic_2 --from-beginning
+    ```
+- While the above code is running, start the Spark Streaming job to consume the traffic streaming in from the API through Kafka:
 
     ```
     spark-submit --master local[2] --driver-java-options "-Dlog4j.configuration=file:///home/hadoop/ss.log4j.properties" --class StreamTraffic yson/trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar b-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092,b-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092
