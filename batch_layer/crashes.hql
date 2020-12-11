@@ -178,15 +178,3 @@ FROM yson_crashes_csv
 WHERE crash_date is not null and direction is not null
     and street_suf is not null and latitude is not null
     and longitude is not null;
-
---DROP TABLE IF EXISTS yson_crashes_csv;
-
-select
-    street_num,
-    direction,
-    --dir_street,
-    dir_street_suf
-from yson_crashes limit 10;
-
-
---select dir_street_suf, crash_date, crash_datetime from yson_crashes limit 30;

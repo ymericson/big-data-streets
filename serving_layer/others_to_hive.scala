@@ -113,42 +113,9 @@ val crashes2 = crashes.
   withColumn("dir_street_suf", initcap(col("dir_street_suf")))
 crashes2.createOrReplaceTempView("crashes2")
 
-//val crashes_month = crashes2.
-//  join(yson_traffic_hist, yson_traffic_hist("dir_street") <=> crashes2("dir_street_suf"), "right").
-//  select($"crash_date", $"dir_street_suf", $"first_crash_type", $"crash_type", $"prim_cause", $"damage")
-//crashes_month.createOrReplaceTempView("crashes_month")
-//
-
 val crashes_month = spark.sql(
   """SELECT * from crashes2 where dir_street_suf in (SELECT DISTINCT dir_street from yson_traffic_hist)"""
 )
 crashes_month.createOrReplaceTempView("crashes_month")
 crashes_month.write.mode(SaveMode.Overwrite).saveAsTable("yson_crashes_month")
 
-
-//
-//val crashes_top1000 = spark.sql(
-//  """SELECT * from crashes_month limit 1000;
-//     """)
-//crashes_top1000.createOrReplaceTempView("crashes_top1000")
-//crashes_top1000.write.mode(SaveMode.Overwrite).saveAsTable("yson_crashes_top1000")
-//
-//
-//
-//
-//val crashes_month_recent = spark.sql(
-//  """
-//  WITH cte AS (
-//  SELECT *, ROW_NUMBER() OVER (PARTITION BY dir_street_suf ORDER BY crash_date DESC) rn
-//    FROM crashes_month
-//  )
-//  SELECT crash_date, dir_street_suf, first_crash_type, crash_type, prim_cause, damage
-//  FROM cte
-//    WHERE rn <= 3
-//    """)
-//crashes_month_recent.createOrReplaceTempView("crashes_month_recent")
-//
-//
-//
-//crashes_month_recent.write.mode(SaveMode.Overwrite).saveAsTable("yson_crashes_month_recent")
-//
