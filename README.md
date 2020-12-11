@@ -48,7 +48,7 @@ and stored in ORC file format.
 #### Serving Layer
 
 The serving layer takes the ORC tables in Hive, which were created in the batch layer, and stores them in HBase. These views
-can be called through ad-hoc queries that are requested from the web app.
+are pre-computed and called through ad-hoc queries that are requested from the web app.
 
 #### Speed Layer
 
