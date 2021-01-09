@@ -79,34 +79,3 @@ Demo:
 
 ![Gif](.images/interface.gif)
 
-### Running the app
-
-1. Generate the batch layer: bulk download and ingest csv files to HDFS through `1.getData.sh`, and use Hive to create batch views through `2.ingestToHivesh`.
-
-2. Generate the serving layer with files in `serving_layer` folder.
-
-3. Use `trafficKafka` and `trafficSpeedLayer` Uber jar files to run the speed layer:
-
-- Create a kafka topic `yson_traffic_2` to house incoming traffic data.
-
-    ```
-    kafka_2.12-2.2.1/bin/kafka-topics.sh --create --zookeeper z-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:2181,z-3.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:2181,z-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:2181 --replication-factor 2 --partitions 1 --topic yson_traffic_2
-    ```
-- Write the live traffic data into Kafka report:
-
-    ```
-    java -cp yson/trafficKafka/target/uber-trafficKafka-1.0-SNAPSHOT.jar yson.trafficKafka.TrafficUpdate b-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092,b-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092
-    ```
-- We can look at the topic being written here:
-
-    ```
-    kafka_2.12-2.2.1/bin/kafka-console-consumer.sh --bootstrap-server b-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092,b-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092 --topic yson_traffic_2 --from-beginning
-    ```
-- While the above code is running, start the Spark Streaming job to consume the traffic streaming in from the API through Kafka:
-
-    ```
-    spark-submit --master local[2] --driver-java-options "-Dlog4j.configuration=file:///home/hadoop/ss.log4j.properties" --class StreamTraffic yson/trafficSpeedLayer/target/uber-trafficSpeedLayer-1.0-SNAPSHOT.jar b-1.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092,b-2.mpcs53014-kafka.fwx2ly.c4.kafka.us-east-2.amazonaws.com:9092
-    ```
-
-Then log into the webserver node and run web app `/webapp/app.js`.
-
